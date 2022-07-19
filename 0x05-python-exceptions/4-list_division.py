@@ -1,23 +1,20 @@
 #!/usr/bin/python3
-"""
-    divides element by element 2 lists.
-    """
-
-
 def list_division(my_list_1, my_list_2, list_length):
-    result = []
-    for x in range(0, list_length):
+    div = []
+    temp_result = 0
+    for i in range(0, list_length):
         try:
-            result.append(my_list_1[x] / my_list_2[x])
-        except IndexError:
-            print("out of range")
-            result.append(0)
+            temp_result = my_list_1[i] / my_list_2[i]
         except TypeError:
+            temp_result = 0
             print("wrong type")
-            result.append(0)
         except ZeroDivisionError:
+            temp_result = 0
             print("division by 0")
-            result.append(0)
+        except IndexError:
+            temp_result = 0
+            print("out of range")
         finally:
             pass
-    return result
+        div.append(temp_result)
+    return div

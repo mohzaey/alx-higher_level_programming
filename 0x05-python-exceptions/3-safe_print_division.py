@@ -1,14 +1,9 @@
 #!/usr/bin/python3
-"""
- divides 2 integers and prints the result.
-    """
-
-
 def safe_print_division(a, b):
     try:
-        x = a / b
-    except:
-        x = None
+        div = a / b
+    except (ZeroDivisionError, FloatingPointError):
+        div = None
     finally:
-        print("Inside result: {}".format(x))
-        return x
+        print("Inside result: {}".format(div))
+    return div
